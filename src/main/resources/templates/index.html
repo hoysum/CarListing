@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="car : ${cars}">
+    <h2 th:text="${car.name}"></h2>
+    <h6 th:inline="text">specializing in [[${director.genre}]]</h6>
+    <ul>
+        <th:block th:each="category  : ${car.categories}">
+            <li th:inline="text"><b>[[${car.description}]]</b>
+                [[${category.description}]].</li>
+
+
+        </th:block>
+
+    </ul>
+
+
+</div>
+</body>
+</html>
